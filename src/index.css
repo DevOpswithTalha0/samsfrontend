@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/Gilroy-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "dancingScript";
+  src: url("./assets/font/DancingScript-Regular.ttf") format("truetype");
+}
+* {
+  font-family: "Gilroy";
+  font-weight: 1000;
+}
+.form-input {
+  @apply flex items-center py-3 px-4 mt-2 w-full rounded-lg border border-gray-100 shadow-md tracking-wide text-slate-900 focus:ring-2 focus:ring-indigo-700 focus:outline-none;
+}
+
+.submit-btn {
+  @apply flex items-center justify-center w-full text-white bg-indigo-500 py-4 rounded-3xl shadow-md hover:bg-indigo-600 transition duration-300;
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out both;
+}

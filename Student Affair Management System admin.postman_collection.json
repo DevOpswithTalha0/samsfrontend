@@ -1,0 +1,1126 @@
+{
+	"info": {
+		"_postman_id": "c6179a4e-1794-4fe9-9cba-17e2053a7bda",
+		"name": "Student Affair Management System admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45065768",
+		"_collection_link": "https://samia-6645356.postman.co/workspace/Samia's-Workspace~ca87180a-054c-4c2a-872a-52d092974709/collection/45065768-c6179a4e-1794-4fe9-9cba-17e2053a7bda?action=share&source=collection_link&creator=45065768"
+	},
+	"item": [
+		{
+			"name": "HealthCheck",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/healthcheck",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"healthcheck"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"SP22-BCS-177@STUDENTS.CUISAHIWAL.EDU.PK\",\r\n    \"registrationNumber\": \"SP22-BCS-177\",\r\n    \"password\": \"00000000\",\r\n    \"phoneNo\": \"+920000000000\",\r\n    \"fullName\": \"Samia Fatima\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/user/verify-email/5cacc0e7b666459bcc892467c120c369c6ea43fe1276d37358b92e8888a977c5",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"verify-email",
+								"5cacc0e7b666459bcc892467c120c369c6ea43fe1276d37358b92e8888a977c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"SP22-BCS-177@STUDENTS.CUISAHIWAL.EDU.PK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/resend-verification-email",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"resend-verification-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registrationNumber\": \"admin\", //admin\r\n    // \"registrationNumber\": \"SP22-BCS-177\", //student\r\n    \"password\": \"00000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/login",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/user/logout",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODIzYjlkMGFhMTdiNmFlOTlkMmYxNDAiLCJpYXQiOjE3NDcxNzE5NDksImV4cCI6MTc0NzYwMzk0OX0.aGr2q8uz6iBUBe_Oc3dD_apz-ox0ejz_f4YA5tDG0Ao\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/refresh-token",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"12345678\",\r\n    \"newPassword\": \"00000000\",\r\n    \"confirmPassword\": \"00000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/change-password",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/user/get-user",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"get-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Samia Fa.\",\r\n    \"phoneNo\": \"+9200000000023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/update-account-detail",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"update-account-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registrationNumber\": \"SP22-BCS-177\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/forgot-password",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set New Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"986400\",\r\n    \"registrationNumber\": \"SP22-BCS-177\",\r\n    \"newPassword\": \"00000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/set-new-password",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"set-new-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registrationNumber\": \"SP22-BCS-177\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/resend-otp",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"resend-otp"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODI0NmIzYzllZTg5ODkxZDE2MTJkZTkiLCJlbWFpbCI6InNwMjItYmNzLTE3N0BzdHVkZW50cy5jdWlzYWhpd2FsLmVkdS5wayIsImZ1bGxOYW1lIjoiU2FtaWEgRmEuIiwiaWF0IjoxNzQ3NTk4NTU4LCJleHAiOjE3NDc2ODQ5NTh9.VIcXL173Wa3Q0QkNvuxfBAnHxRXPEpmBNOQbEP_QTPA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Grievance",
+			"item": [
+				{
+					"name": "submit Grievance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registration\": \"SP22-BCS-177\",\r\n    \"applicant_name\": \"Umer\",\r\n    \"phone_number\": \"+923000000000\",\r\n    \"email\": \"SP22-BCS-177@STUDENTS.CUISAHIWAL.EDU.PK\",\r\n    \"issue\": \"harassment\",\r\n    \"date_of_issue\": \"2025-08-16\",\r\n    \"description\": \"abc...etc\",\r\n    \"evidence\": \"http://res.cloudinary.com/samiafatima/image/upload/v1755537618/media/qylpoznfn7ay4vsdacal.jpg\",\r\n    \"accused_person\": [\r\n        {\r\n            \"person_name\": \"abc\",\r\n            \"person_reg\": \"SP11\"\r\n        },\r\n        {\r\n            \"person_name\": \"abc\",\r\n            \"person_reg\": \"SP11\"\r\n        }\r\n    ],\r\n    \"other_information\": \"etc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/grievance/submit",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"grievance",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Grievance & Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"68a32c6f9515f05cf7cfe098\",\r\n    \"updatedFields\": {\r\n        // \"applicant_name\": \"umer's\"\r\n        \r\n        // remarks admin side\r\n        \"status\": \"In Progress\",\r\n        \"stage\": \"stage...\",\r\n        \"remarks\": \"checking\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/grievance/update",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"grievance",
+								"update"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Grievance",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/grievance/delete/68a32c6f9515f05cf7cfe098",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"grievance",
+								"delete",
+								"68a32c6f9515f05cf7cfe098"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Grievance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/grievance/get-all?page=1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"grievance",
+								"get-all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "Upload Media",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [
+										"/C:/Users/Muham/Desktop/1748146314811.jpg",
+										"/C:/Users/Muham/Downloads/Combined_Document_1755708475576.pdf.pdf"
+									]
+								},
+								{
+									"key": "folder",
+									"value": "media",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/media/upload",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"media",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Add Events",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"time\": \"10:00 AM - 03:00 PM\",\r\n    \"date\": \"2025-09-10\",\r\n    \"registrationEndDate\":\"2025-09-08\",\r\n    \"title\": \"Sports Gala 2025\",\r\n    \"speaker\": \"\",\r\n    \"description\": \"Top companies from various industries are coming to hire. Bring your updated CV and dress professionally!\",\r\n    \"society_name\": \"Career Services\",\r\n    \"image\": \"http://res.cloudinary.com/samiafatima/image/upload/v1755538129/media/kianasyqhw2bdrqnaru1.jpg\", //optional\r\n    \"bgColor\": \"bg-orange-100\",\r\n    \"president\": {\r\n        \"email\": \"president@yopmail.com\",\r\n        \"name\": \"President\",\r\n        \"contact\": \"+920000000000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/events/add",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/events/get-all",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Student Registered Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/events/get-all-student-registered-events",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"get-all-student-registered-events"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "68ac0da975ebfa730149e573",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate PDF Events & Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/events/generate-pdf-events?email=president@yopmail.com",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"generate-pdf-events"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "president@yopmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"68b3172dcdff8c10dca5f77a\",\r\n    \"updateData\": {\r\n        \"title\": \"CU Job Fair\",\r\n        \"speaker\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/events/update",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/events/delete/68a36870c5832d5720098c1c",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"delete",
+								"68a36870c5832d5720098c1c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventId\": \"68ac122532a03281af1aba42\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/events/book-event",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"book-event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student Registered Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/events/get-all-registered-events",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"get-all-registered-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"68a37a448f38afe4301a3f10\",\r\n    \"updateData\": {\r\n        \"eventId\": \"68a36865c5832d5720098c18\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/events/change-event",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"change-event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/events/delete-event/68a37a448f38afe4301a3f10",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"events",
+								"delete-event",
+								"68a37a448f38afe4301a3f10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Counselor",
+			"item": [
+				{
+					"name": "Add Detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dr. Zaid\",\r\n    \"schedule\": {\r\n        \"Monday\": [\r\n            \"8:30 AM - 9:30 AM\",\r\n            \"10:00 AM - 11:00 AM\"\r\n        ],\r\n        \"Wednesday\": [\r\n            \"9:00 AM - 10:00 AM\",\r\n            \"2:30 PM - 3:30 PM\"\r\n        ],\r\n        \"Thursday\": [\r\n            \"9:00 AM - 10:00 AM\",\r\n            \"2:30 PM - 3:30 PM\"\r\n        ]\r\n    },\r\n    \"type\": \"Personal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/counselor/add-detail",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"counselor",
+								"add-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/counselor/get-details",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"counselor",
+								"get-details"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Dr. Ahmed",
+									"disabled": true
+								},
+								{
+									"key": "date",
+									"value": "08-27-2025",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"68a3816f98003f9532f32d69\",\r\n    \"updateData\": {\r\n        \"schedule\": {\r\n            \"Monday\": [\r\n                \"8:30 AM - 9:30 AM\",\r\n                \"10:00 AM - 11:00 AM\"\r\n            ],\r\n            \"Wednesday\": [\r\n                \"9:00 AM - 10:00 AM\",\r\n                \"2:30 PM - 3:30 PM\"\r\n            ],\r\n            \"Thursday\": [\r\n                \"9:00 AM - 10:00 AM\",\r\n                \"2:30 PM - 3:30 PM\"\r\n            ],\r\n            \"Friday\": [\r\n                \"9:00 AM - 10:00 AM\",\r\n                \"2:30 PM - 3:30 PM\"\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/counselor/update-details",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"counselor",
+								"update-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Details",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/counselor/delete-details/68a3818998003f9532f32d6d",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"counselor",
+								"delete-details",
+								"68a3818998003f9532f32d6d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Counselor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Samia Fatima\",\r\n    \"registrationNumber\": \"SP22-BCS-177\",\r\n    \"email\": \"SP22-BCS-177@STUDENTS.CUISAHIWAL.EDU.PK\",\r\n    \"counseling_type\": \"Carrer\",\r\n    \"counselor_name\": \"Dr. Ali\",\r\n    \"counselor_id\": \"68a381a198003f9532f32d71\",\r\n    \"day\": \"Monday\",\r\n    \"time_slot\": \"8:30 AM - 9:30 AM\",\r\n    \"issue_description\": \"abc...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/counselor/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"counselor",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student Sessions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/counselor/get-student-sessions",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"counselor",
+								"get-student-sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Session Detail/Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"68a38fdd7e67bda151867844\",\r\n    \"updateData\": {\r\n        \"status\": \"approved\" // [\"pending\", \"approved\", \"completed\", \"rejected\"]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/counselor/update-student-session",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"counselor",
+								"update-student-session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL Session Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/counselor/delete-student-session/68a388372b992d6d2f8cc114",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"counselor",
+								"delete-student-session",
+								"68a388372b992d6d2f8cc114"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feedback",
+			"item": [
+				{
+					"name": "Add FeedBack",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Samia F.\",\r\n    \"registrationNumber\": \"SP22-BCS-177\",\r\n    \"email\": \"SP22-BCS-177@STUDENTS.CUISAHIWAL.EDU.PK\",\r\n    \"phone_number\": \"+92300000000\",\r\n    \"feedback_type\": \"Event\",\r\n    \"description\": \"demoo\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/feedback/add",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"feedback",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Feedbacks",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Samia F.\",\r\n    \"registrationNumber\": \"SP22-BCS-177\",\r\n    \"email\": \"SP22-BCS-177@STUDENTS.CUISAHIWAL.EDU.PK\",\r\n    \"phone_number\": \"+92300000000\",\r\n    \"feedback_type\": \"Event\",\r\n    \"description\": \"demoo\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/feedback/get-all",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"feedback",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact us",
+			"item": [
+				{
+					"name": "Contact Us",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"SP22-BCS-177@STUDENTS.CUISAHIWAL.EDU.PK\",\r\n    \"registrationNumber\": \"SP22-BCS-177\",\r\n    \"phone_number\": \"+92300000000\",\r\n    \"message\": \"demoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/contact/contact-us",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"contact",
+								"contact-us"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/contact/get-all",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"contact",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGEzMjM3ZGVjMGYyMzkyYzI0ZGQ4M2QiLCJlbWFpbCI6InNhbXNAeW9wbWFpbC5jb20iLCJmdWxsTmFtZSI6IlNhbWlhIEZhdGltYSIsImlhdCI6MTc1NjU2NjY1NCwiZXhwIjoxNzU2NjUzMDU0fQ.jxTrZ7ERDwn4DQVfpKyH9HXnGXwtmmM8c7ykBka1AtY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "https://api.samscui.me"
+		},
+		{
+			"key": "api",
+			"value": "https://api.samscui.me",
+			"disabled": true
+		}
+	]
+}
